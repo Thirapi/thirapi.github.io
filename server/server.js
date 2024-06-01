@@ -20,26 +20,34 @@ app.use(session({
 
 // Routes
 app.get('/', (req, res) => {
+  console.log("Serving login page");
   res.render('login');
 });
 
 app.post('/login', (req, res) => {
   const { username } = req.body;
   req.session.username = username;
+  console.log(`User ${username} logged in`);
   res.redirect('/chat');
 });
 
 app.get('/chat', (req, res) => {
   if (!req.session.username) {
+    console.log("No username in session, redirecting to login");
     return res.redirect('/');
   }
+  console.log(`Serving chat page for user ${req.session.username}`);
   res.render('chat', { username: req.session.username });
 });
 
 io.on('connection', (socket) => {
   console.log('A user connected');
   socket.on('chat message', (msg) => {
+    console.log(`Message received: ${msg}`);
     io.emit('chat message', msg);
+  });
+  socket.on('disconnect', () => {
+    console.log('A user disconnected');
   });
 });
 
