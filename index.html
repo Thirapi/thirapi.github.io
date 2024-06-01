@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="connect-src 'wss://localhost:6969';">
+  <meta http-equiv="Content-Security-Policy" content="connect-src 'ws://localhost:6969';">
   <title>MaDaFaKa</title>
 </head>
 <body>
@@ -32,7 +32,7 @@
         ws.close();
       }
 
-      ws = new WebSocket('wss://localhost:6969');
+      ws = new WebSocket('ws://localhost:6969');
       ws.onopen = () => {
         console.log('Connection opened!');
       }
