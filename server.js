@@ -6,6 +6,8 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
+app.use(express.static('public'));
+
 wss.on('connection', function connection(ws) {
     ws.on('message', function incoming(message) {
         // Broadcast pesan ke semua klien yang terhubung
