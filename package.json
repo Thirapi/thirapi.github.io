@@ -1,11 +1,16 @@
 {
-  "name": "rtm",
-  "version": "0.0.1",
+  "name": "thirapi.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
     "express": "^4.19.2",
-    "ws": "^7.5.9"
+    "ws": "^8.17.0"
   }
 }
