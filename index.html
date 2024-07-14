@@ -18,13 +18,28 @@
 </head>
 <body>
     <div class="container">
-        <img src="cat.gif" alt="" style="filter: drop-shadow(0 0 0.75rem crimson) hue-rotate(90deg) sepia(100%) invert(100%); animation: rotate 5s linear infinite;">
+        <img src="cat.gif" id="clickable-image" alt="" style="filter: drop-shadow(0 0 0.75rem crimson) hue-rotate(90deg) sepia(100%) invert(100%); animation: rotate 5s linear infinite;">
         <img src="https://readme-typing-svg.demolab.com?font=Rokkitt&weight=800&size=34&pause=1000&color=F7F7F7&random=false&width=435&lines=thirapi.github.io" alt="thirapi.github.io" />
     </div>
-    <audio autoplay>
-        <source src="a.mp3" type="audio/mpeg">
+    <audio id="background-music">
+        <source src="your-audio-file.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+      
+      <script>
+        // Menangkap elemen gambar
+        var clickableImage = document.getElementById('clickable-image');
+        // Menangkap elemen audio
+        var backgroundMusic = document.getElementById('background-music');
+      
+        // Menambahkan event listener untuk klik pada gambar
+        clickableImage.addEventListener('click', function() {
+          // Memastikan audio dimulai dari awal
+          backgroundMusic.currentTime = 0;
+          // Memulai pemutaran audio
+          backgroundMusic.play();
+        });
+      </script>
     <style>
         @keyframes rotate {
           from {
