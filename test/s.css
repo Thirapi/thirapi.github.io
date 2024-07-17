@@ -1,0 +1,66 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #181818;
+  }
+  
+  .story-container {
+    width: 300px;
+    height: 500px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .story-content {
+    text-align: center;
+  }
+  
+  .album-cover {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .song-details {
+    padding: 20px;
+  }
+  
+  .song-title {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .artist-name {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .play-button {
+    background-color: #1db954;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .play-button:hover {
+    background-color: #1aa34a;
+  }
+  
