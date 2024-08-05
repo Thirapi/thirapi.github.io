@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raph 後</title>
+    <style>
+        body {
+            background-image: url("img.webp");
+        }
+        .container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="cat.gif" id="clickable-image" alt="" style="animation: rotate 5s linear infinite;">
+        <a href="./minecraft"><img src="https://readme-typing-svg.demolab.com?font=Rokkitt&weight=800&size=34&pause=1000&color=F7F7F7&random=false&width=435&lines=thirapi.github.io" alt="thirapi.github.io" /></a>
+    </div>
+    <audio id="background-music">
+        <source src="a.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+      <script>
+        // Menangkap elemen gambar
+        var clickableImage = document.getElementById('clickable-image');
+        // Menangkap elemen audio
+        var backgroundMusic = document.getElementById('background-music');
+      
+        // Menambahkan event listener untuk klik pada gambar
+        clickableImage.addEventListener('click', function() {
+          // Memastikan audio dimulai dari awal
+          backgroundMusic.currentTime = 0;
+          // Memulai pemutaran audio
+          backgroundMusic.play();
+        });
+      </script>
+    <style>
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+</body>
+</html>
