@@ -33,18 +33,10 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            white-space: pre-wrap;
+            white-space: pre;
             animation: rainbow 5s linear infinite;
             background-size: 200% 100%;
-            overflow-x: auto;
-        }
-
-        pre {
-            margin: 0;
-            padding: 0;
-            font-size: 12px; /* Smaller font size for mobile */
             overflow-x: auto; /* Enable horizontal scrolling */
-            width: 100%; /* Ensure it uses the full width of the screen */
         }
 
         @keyframes rainbow {
@@ -53,6 +45,12 @@
             }
             50% {
                 background-position: 100% 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grad {
+                font-size: 10px; /* Reduce font size for small screens */
             }
         }
     </style>
