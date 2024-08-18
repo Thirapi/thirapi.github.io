@@ -23,7 +23,6 @@
             font-family: monospace;
             margin: 0;
             padding: 20px;
-            overflow-x: hidden;
         }
 
         .grad {
@@ -36,7 +35,8 @@
             white-space: pre;
             animation: rainbow 5s linear infinite;
             background-size: 200% 100%;
-            overflow-x: auto; /* Enable horizontal scrolling */
+            overflow-wrap: normal;
+            word-wrap: normal;
         }
 
         @keyframes rainbow {
@@ -48,15 +48,15 @@
             }
         }
 
-        @media (max-width: 600px) {
-            .grad {
-                font-size: 10px; /* Reduce font size for small screens */
-            }
+        .container {
+            max-width: 100%;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
-    <pre class="grad">
+    <div class="container">
+        <pre class="grad">
    __  __      __      __        __                               __ 
    /  |/  |    /  |    /  |      /  |                             /  |
   _$$ |$$ |_  _$$ |_   $$ |____  $$/   ______   ______    ______  $$/ 
@@ -69,88 +69,89 @@
                                                         $$ |          
                                                         $$ |          
                                                         $$/                  
-    </pre>
-<pre class="grad">
+        </pre>
+        <pre class="grad">
 +-----------------------------------------------------------------------+
 | I'm either sleeping, daydreaming, or trying to make sense of what's   |
 | really going on while lying on a thin mattress to sink into dreamland.|
 +-----------------------------------------------------------------------+
-</pre>
-<pre class="grad">
+        </pre>
+        <pre class="grad">
 +-----------------------------------------------------------------------+
 |                         What I'm working on                           |
 +-----------------------------------------------------------------------+
-</pre>
-<table id="data-table" style="display: none;">
-    <thead>
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td><a href="https://komunikasi.vercel.app">webchat</a></td>
-            <td>webchat realtime</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><a href="./notepad">notepad</a></td>
-            <td>for personal purposes</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><a href="https://thiraph.vercel.app">portofolio</a></td>
-            <td>built with reactjs</td>
-        </tr>
-    </tbody>
-</table>
+        </pre>
+        <table id="data-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="https://komunikasi.vercel.app">webchat</a></td>
+                    <td>webchat realtime</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="./notepad">notepad</a></td>
+                    <td>for personal purposes</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="https://thiraph.vercel.app">portofolio</a></td>
+                    <td>built with reactjs</td>
+                </tr>
+            </tbody>
+        </table>
 
-<pre class="grad" id="ascii-table"></pre>
+        <pre class="grad" id="ascii-table"></pre>
 
-<pre class="grad">note: is still under development, shortcomings are normal</pre>
+        <pre class="grad">note: is still under development, shortcomings are normal</pre>
+    </div>
 
-<script>
-    function generateAsciiTable() {
-        const table = document.getElementById('data-table');
-        const rows = table.querySelectorAll('tbody tr');
-        let asciiTable = '+----+----------------+-------------------------------------------------+\n';
-        asciiTable += '| No | Name           | Description                                     |\n';
-        asciiTable += '+----+----------------+-------------------------------------------------+\n';
+    <script>
+        function generateAsciiTable() {
+            const table = document.getElementById('data-table');
+            const rows = table.querySelectorAll('tbody tr');
+            let asciiTable = '+----+----------------+-------------------------------------------------+\n';
+            asciiTable += '| No | Name           | Description                                     |\n';
+            asciiTable += '+----+----------------+-------------------------------------------------+\n';
 
-        rows.forEach((row, index) => {
-            const cells = row.querySelectorAll('td');
-            const no = (index + 1).toString().padEnd(4);
-            const nameAnchor = cells[1].querySelector('a');
-            const nameText = nameAnchor.innerText;
-            const name = `[${nameText}](${nameAnchor.href})`;
-            
-            // Calculate dynamic padding for Name
-            const namePadding = 16 - nameText.length;
-            const nameWithPadding = name + ' '.repeat(namePadding);
-            
-            // Adjust padding for Description based on the total width of the table
-            const descriptionPadding = 49 - cells[2].innerText.length;
-            const description = cells[2].innerText + ' '.repeat(descriptionPadding);
-            
-            // Create the row with dynamic padding and borders
-            asciiTable += `|${no}|${nameWithPadding}|${description}|\n`;
-        });
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const no = cells[0].innerText.padEnd(4);
+                const nameAnchor = cells[1].querySelector('a');
+                const nameText = nameAnchor.innerText;
+                const name = `[${nameText}](${nameAnchor.href})`;
 
-        asciiTable += '+----+----------------+-------------------------------------------------+';
+                // Calculate dynamic padding for Name
+                const namePadding = 16 - nameText.length;
+                const nameWithPadding = name + ' '.repeat(namePadding);
 
-        // Replace brackets with actual clickable links in HTML
-        const formattedTable = asciiTable
-            .replace(/\[(.*?)\]\((.*?)\)/g, (match, text, url) => {
-                return `<a href="${url}" style="color: inherit; text-decoration: underline;">${text}</a>`;
+                // Adjust padding for Description based on the total width of the table
+                const descriptionPadding = 49 - cells[2].innerText.length;
+                const description = cells[2].innerText + ' '.repeat(descriptionPadding);
+
+                // Create the row with dynamic padding and borders
+                asciiTable += `|${no}|${nameWithPadding}|${description}|\n`;
             });
 
-        document.getElementById('ascii-table').innerHTML = formattedTable;
-    }
+            asciiTable += '+----+----------------+-------------------------------------------------+';
 
-    generateAsciiTable();
-</script>
+            // Replace brackets with actual clickable links in HTML
+            const formattedTable = asciiTable
+                .replace(/\[(.*?)\]\((.*?)\)/g, (match, text, url) => {
+                    return `<a href="${url}" style="color: inherit; text-decoration: underline;">${text}</a>`;
+                });
+
+            document.getElementById('ascii-table').innerHTML = formattedTable;
+        }
+
+        generateAsciiTable();
+    </script>
 </body>
 </html>
