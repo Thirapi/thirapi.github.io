@@ -5,52 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛸</text></svg>">
     <title>Thirapi後</title>
+    <style>
+        :root {
+            --red: #ff0000;
+            --yellow: #ffff00;
+            --lime: #00ff00;
+            --green: #008000;
+            --cyan: #00ffff;
+            --blue: #0000ff;
+            --purple: #800080;
+            --pink: #ffc0cb;
+        }
+
+        body {
+            background-color: #1E1E1E;
+            color: white;
+            font-family: monospace;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .grad {
+            font-family: monospace;
+            font-size: 14px;
+            background: linear-gradient(to right, var(--red), var(--yellow), var(--lime), var(--green), var(--cyan), var(--blue), var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            white-space: pre-wrap;
+            animation: rainbow 5s linear infinite;
+            background-size: 200% 100%;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+            font-size: 12px; /* Smaller font size for mobile */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            width: 100%; /* Ensure it uses the full width of the screen */
+        }
+
+        @keyframes rainbow {
+            0%, 100% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 100% 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Thirapi</h1>
-    <p>I'm either sleeping, daydreaming, or trying to make sense of what's really going on while lying on a thin mattress to sink into dreamland.</p>
-    <h2>Projects 🤦</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td><a href="https://komunikasi.vercel.app">webchat</a></td>
-                <td>simple realtime chat?, maybe</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td><a href="./notepad">notepad</a></td>
-                <td>ah ini bukan notepad, ini tempat paste dan edit</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td><a href="https://thiraph.vercel.app">Learn React</a></td>
-                <td>niatnya sih portofolio</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td><a href="./v2">Versi Lama</a></td>
-                <td>Web ini, cuma versi lama (sayang kalau dihapus)</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td><a href="./mc">Maen Minecraft</a></td>
-                <td>hey bro support <a href="https://eaglercraft.com">eaglecraft</a></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td><a href="./test/">Test</a></td>
-                <td>Testing various features.</td>
-            </tr>
-        </tbody>
-    </table>
-    <iframe width="300" height="225" src="https://www.youtube.com/embed/WwAbo2I58wk?si=G4KYao9S-SbyLYCV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <pre class="grad">
+   __  __      __      __        __                               __ 
+   /  |/  |    /  |    /  |      /  |                             /  |
+  _$$ |$$ |_  _$$ |_   $$ |____  $$/   ______   ______    ______  $$/ 
+ / $$  $$   |/ $$   |  $$      \ /  | /      \ /      \  /      \ /  |
+ $$$$$$$$$$/ $$$$$$/   $$$$$$$  |$$ |/$$$$$$  |$$$$$$  |/$$$$$$  |$$ |
+ / $$  $$   |  $$ | __ $$ |  $$ |$$ |$$ |  $$/ /    $$ |$$ |  $$ |$$ |
+ $$$$$$$$$$/   $$ |/  |$$ |  $$ |$$ |$$ |     /$$$$$$$ |$$ |__$$ |$$ |
+   $$ |$$ |    $$  $$/ $$ |  $$ |$$ |$$ |     $$    $$ |$$    $$/ $$ |
+   $$/ $$/      $$$$/  $$/   $$/ $$/ $$/       $$$$$$$/ $$$$$$$/  $$/ 
+                                                        $$ |          
+                                                        $$ |          
+                                                        $$/                  
+    </pre>
+<pre class="grad">
++-----------------------------------------------------------------------+
+| I'm either sleeping, daydreaming, or trying to make sense of what's   |
+| really going on while lying on a thin mattress to sink into dreamland.|
++-----------------------------------------------------------------------+
+</pre>
+<pre class="grad">
++-----------------------------------------------------------------------+
+|                         What I'm working on                           |
++-----------------------------------------------------------------------+
+</pre>
+<table id="data-table" style="display: none;">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td><a href="https://komunikasi.vercel.app">webchat</a></td>
+            <td>webchat realtime</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="./notepad">notepad</a></td>
+            <td>for personal purposes</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="https://thiraph.vercel.app">portofolio</a></td>
+            <td>built with reactjs</td>
+        </tr>
+    </tbody>
+</table>
+
+<pre class="grad" id="ascii-table"></pre>
+
+<pre class="grad">note: is still under development, shortcomings are normal</pre>
+
+<script>
+    function generateAsciiTable() {
+        const table = document.getElementById('data-table');
+        const rows = table.querySelectorAll('tbody tr');
+        let asciiTable = '+----+----------------+-------------------------------------------------+\n';
+        asciiTable += '| No | Name           | Description                                     |\n';
+        asciiTable += '+----+----------------+-------------------------------------------------+\n';
+
+        rows.forEach((row, index) => {
+            const cells = row.querySelectorAll('td');
+            const no = (index + 1).toString().padEnd(4);
+            const nameAnchor = cells[1].querySelector('a');
+            const nameText = nameAnchor.innerText;
+            const name = `[${nameText}](${nameAnchor.href})`;
+            
+            // Calculate dynamic padding for Name
+            const namePadding = 16 - nameText.length;
+            const nameWithPadding = name + ' '.repeat(namePadding);
+            
+            // Adjust padding for Description based on the total width of the table
+            const descriptionPadding = 49 - cells[2].innerText.length;
+            const description = cells[2].innerText + ' '.repeat(descriptionPadding);
+            
+            // Create the row with dynamic padding and borders
+            asciiTable += `|${no}|${nameWithPadding}|${description}|\n`;
+        });
+
+        asciiTable += '+----+----------------+-------------------------------------------------+';
+
+        // Replace brackets with actual clickable links in HTML
+        const formattedTable = asciiTable
+            .replace(/\[(.*?)\]\((.*?)\)/g, (match, text, url) => {
+                return `<a href="${url}" style="color: inherit; text-decoration: underline;">${text}</a>`;
+            });
+
+        document.getElementById('ascii-table').innerHTML = formattedTable;
+    }
+
+    generateAsciiTable();
+</script>
 </body>
 </html>
