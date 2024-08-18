@@ -22,7 +22,6 @@
             color: white;
             font-family: monospace;
             margin: 0;
-            padding: 20px;
         }
 
         .grad {
@@ -37,6 +36,13 @@
             background-size: 200% 100%;
             overflow-wrap: normal;
             word-wrap: normal;
+            min-width: 100%;
+            display: inline-block;
+        }
+
+        pre {
+            display: block;
+            margin: 0;
         }
 
         @keyframes rainbow {
@@ -49,14 +55,15 @@
         }
 
         .container {
-            max-width: 100%;
             overflow-x: auto;
+            white-space: nowrap;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <pre class="grad">
+        <pre><span class="grad">
    __  __      __      __        __                               __ 
    /  |/  |    /  |    /  |      /  |                             /  |
   _$$ |$$ |_  _$$ |_   $$ |____  $$/   ______   ______    ______  $$/ 
@@ -68,19 +75,19 @@
    $$/ $$/      $$$$/  $$/   $$/ $$/ $$/       $$$$$$$/ $$$$$$$/  $$/ 
                                                         $$ |          
                                                         $$ |          
-                                                        $$/                  
-        </pre>
-        <pre class="grad">
+                                                        $$/              
+        </span></pre>
+        <pre><span class="grad">
 +-----------------------------------------------------------------------+
 | I'm either sleeping, daydreaming, or trying to make sense of what's   |
 | really going on while lying on a thin mattress to sink into dreamland.|
 +-----------------------------------------------------------------------+
-        </pre>
-        <pre class="grad">
+        </span></pre>
+        <pre><span class="grad">
 +-----------------------------------------------------------------------+
 |                         What I'm working on                           |
 +-----------------------------------------------------------------------+
-        </pre>
+        </span></pre>
         <table id="data-table" style="display: none;">
             <thead>
                 <tr>
@@ -110,7 +117,7 @@
 
         <pre class="grad" id="ascii-table"></pre>
 
-        <pre class="grad">note: is still under development, shortcomings are normal</pre>
+        <pre><span class="grad">note: is still under development, shortcomings are normal</span></pre>
     </div>
 
     <script>
