@@ -42,7 +42,15 @@
         }
 
         .no-anime {
-            animation: none;
+            font-family: monospace;
+            font-size: 14px;
+            color: white;
+            white-space: pre;
+            background-size: 200% 100%;
+            overflow-wrap: normal;
+            word-wrap: normal;
+            min-width: 100%;
+            display: inline-block;
         }
 
         pre {
@@ -68,7 +76,7 @@
 </head>
 <body>
     <div class="container">
-        <pre><span class="grad">
+        <pre><span class="no-anime">
    __  __      __      __        __                               __ 
    /  |/  |    /  |    /  |      /  |                             /  |
   _$$ |$$ |_  _$$ |_   $$ |____  $$/   ______   ______    ______  $$/ 
@@ -82,15 +90,10 @@
                                                         $$ |          
                                                         $$/              
         </span></pre>
-        <pre><span class="grad no-anime">
+        <pre><span class="no-anime">
 +-----------------------------------------------------------------------+
 | I'm either sleeping, daydreaming, or trying to make sense of what's   |
 | really going on while lying on a thin mattress to sink into dreamland.|
-+-----------------------------------------------------------------------+
-        </span></pre>
-        <pre><span class="grad no-anime">
-+-----------------------------------------------------------------------+
-|                         What I'm working on                           |
 +-----------------------------------------------------------------------+
         </span></pre>
         <table id="data-table" style="display: none;">
@@ -117,19 +120,27 @@
                     <td><a href="https://thiraph.vercel.app">portofolio</a></td>
                     <td>built with reactjs</td>
                 </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="https://data-dummy.vercel.app/">API Dummy</a></td>
+                    <td>API Dummy - Fake API for testing</td>
+                </tr>
             </tbody>
         </table>
 
-        <pre class="grad no-anime" id="ascii-table"></pre>
+        <pre class="no-anime" id="ascii-table"></pre>
 
-        <pre><span class="grad">note: is still under development, shortcomings are normal</span></pre>
+        <pre><span class="no-anime">note: is still under development, shortcomings are normal</span></pre>
     </div>
 
     <script>
         function generateAsciiTable() {
             const table = document.getElementById('data-table');
             const rows = table.querySelectorAll('tbody tr');
-            let asciiTable = '+----+----------------+-------------------------------------------------+\n';
+            
+            let asciiTable = '+-----------------------------------------------------------------------+\n';
+            asciiTable += '|                         What Im working on                            |\n';
+            asciiTable += '+----+----------------+-------------------------------------------------+\n';
             asciiTable += '| No | Name           | Description                                     |\n';
             asciiTable += '+----+----------------+-------------------------------------------------+\n';
 
