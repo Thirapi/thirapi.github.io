@@ -76,7 +76,7 @@
 </head>
 <body>
     <div class="container">
-        <div style="border: 1px dashed; padding: 10px; margin-left:4px; width: 335px;">
+        <div style="border: 2px dashed; padding: 10px; margin-left:4px; width: 282px;">
         <div style="display: flex; align-items: center;">
         <pre><span class="grad" style="font-size: 2px;">                                                                               
                            0000000000000000                                
@@ -160,7 +160,7 @@
 
         <pre class="no-anime" id="ascii-table"></pre>
 
-        <pre><span class="no-anime">note: is still under development, shortcomings are normal</span></pre>
+        <pre><span class="no-anime" style="font-size: 10px;">nt: is still under development, shortcomings are normal</span></pre>
     </div>
 
     <script>
@@ -168,11 +168,11 @@
             const table = document.getElementById('data-table');
             const rows = table.querySelectorAll('tbody tr');
             
-            let asciiTable = '+-----------------------------------------+\n';
-            asciiTable += '| # What Im working on                    |\n';
-            asciiTable += '+----+----------------+-------------------+\n';
-            asciiTable += '| No | Name           | Description       |\n';
-            asciiTable += '+----+----------------+-------------------+\n';
+            let asciiTable = '+-----------------------------------+\n';
+            asciiTable += '| # What Im working on              |\n';
+            asciiTable += '+----+------------+-----------------+\n';
+            asciiTable += '| No | Name       | Description     |\n';
+            asciiTable += '+----+------------+-----------------+\n';
 
             rows.forEach(row => {
                 const cells = row.querySelectorAll('td');
@@ -182,18 +182,18 @@
                 const name = `[${nameText}](${nameAnchor.href})`;
 
                 // Calculate dynamic padding for Name
-                const namePadding = 16 - nameText.length;
+                const namePadding = 12 - nameText.length;
                 const nameWithPadding = name + ' '.repeat(namePadding);
 
                 // Adjust padding for Description based on the total width of the table
-                const descriptionPadding = 19 - cells[2].innerText.length;
+                const descriptionPadding = 17 - cells[2].innerText.length;
                 const description = cells[2].innerText + ' '.repeat(descriptionPadding);
 
                 // Create the row with dynamic padding and borders
                 asciiTable += `|${no}|${nameWithPadding}|${description}|\n`;
             });
 
-            asciiTable += '+----+----------------+-------------------+';
+            asciiTable += '+----+------------+-----------------+';
 
             // Replace brackets with actual clickable links in HTML
             const formattedTable = asciiTable
