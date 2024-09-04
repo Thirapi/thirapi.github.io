@@ -76,7 +76,7 @@
 </head>
 <body>
     <div class="container">
-        <div style="border: 1px dashed; padding: 10px; margin-left:4px; width: 586px;">
+        <div style="border: 1px dashed; padding: 10px; margin-left:4px; width: 335px;">
         <div style="display: flex; align-items: center;">
         <pre><span class="grad" style="font-size: 2px;">                                                                               
                            0000000000000000                                
@@ -123,16 +123,7 @@
         <div style="margin-left: 15px;">
             <p>@faiqthirapi</p>
             <p>thirapi</p>
-        </div>
-        <div>
-            <pre><span class="grad" style="font-size: 12px; margin-left: 10px;">
-#### ##### #   # ##### #####       #     #   #   #
-#       #   #  ##  #  #  #  #      # #   ###  #  # 
-#       #   # # #  #  #  #  #     ##### # # # ###  
-#       #   ##  #  #  #  #  #     #   #  ###  #  # 
- ####   #   #   # #   # #   #     #   #   #   #   #              
-            </span></pre>
-        </div>      
+        </div>     
         </div>
         </div>
         <table id="data-table" style="display: none;">
@@ -152,17 +143,17 @@
                 <tr>
                     <td>2</td>
                     <td><a href="./notepad">notepad</a></td>
-                    <td>for personal purposes</td>
+                    <td>personal purposes</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td><a href="https://thiraph.vercel.app">portofolio</a></td>
-                    <td>built with reactjs</td>
+                    <td>learn reactjs</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td><a href="https://data-dummy.vercel.app/">API Dummy</a></td>
-                    <td>API Dummy - Fake API for testing</td>
+                    <td>simple fake api</td>
                 </tr>
             </tbody>
         </table>
@@ -177,11 +168,11 @@
             const table = document.getElementById('data-table');
             const rows = table.querySelectorAll('tbody tr');
             
-            let asciiTable = '+-----------------------------------------------------------------------+\n';
-            asciiTable += '|                         What Im working on                            |\n';
-            asciiTable += '+----+----------------+-------------------------------------------------+\n';
-            asciiTable += '| No | Name           | Description                                     |\n';
-            asciiTable += '+----+----------------+-------------------------------------------------+\n';
+            let asciiTable = '+-----------------------------------------+\n';
+            asciiTable += '| # What Im working on                    |\n';
+            asciiTable += '+----+----------------+-------------------+\n';
+            asciiTable += '| No | Name           | Description       |\n';
+            asciiTable += '+----+----------------+-------------------+\n';
 
             rows.forEach(row => {
                 const cells = row.querySelectorAll('td');
@@ -195,14 +186,14 @@
                 const nameWithPadding = name + ' '.repeat(namePadding);
 
                 // Adjust padding for Description based on the total width of the table
-                const descriptionPadding = 49 - cells[2].innerText.length;
+                const descriptionPadding = 19 - cells[2].innerText.length;
                 const description = cells[2].innerText + ' '.repeat(descriptionPadding);
 
                 // Create the row with dynamic padding and borders
                 asciiTable += `|${no}|${nameWithPadding}|${description}|\n`;
             });
 
-            asciiTable += '+----+----------------+-------------------------------------------------+';
+            asciiTable += '+----+----------------+-------------------+';
 
             // Replace brackets with actual clickable links in HTML
             const formattedTable = asciiTable
