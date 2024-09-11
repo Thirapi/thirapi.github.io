@@ -1,0 +1,17 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  -webkit-text-stroke: 1px #D57BF9;
+  color: transparent;
+  outline: none;
+  font-size: 3.2rem;
+}
+span {
+  color: #d57bf9;
+}
+
+
