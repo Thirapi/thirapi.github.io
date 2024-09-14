@@ -13,7 +13,7 @@ function App() {
       <main>
       <span className='logo'>Thirapi</span>
       <ul className='menu'>
-      <li className='menu--items' onClick={openInNewTab}>blog</li>
+      <li className='menu--items' onClick={commingSoon}>blog</li>
       <li className='menu--items' onClick={commingSoon}>archive</li>
       </ul>
       </main>
