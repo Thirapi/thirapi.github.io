@@ -21,6 +21,16 @@ main:hover {
 }
 
 .main--header {
+display: flex;
+justify-content: space-around;
+}
+
+.main--header>img {
+  height: 80px;
+  border-radius: 170px;
+}
+
+.main--header>span {
   font-size: 5rem;
   font-weight: bolder;
 }
@@ -36,7 +46,6 @@ main:hover {
   justify-content: center;
   margin: 10px;
   padding: 10px;
-  height: 45px;
   border: 1px solid #c0bebe;
   border-radius: 8px;
 }
@@ -55,11 +64,6 @@ main:hover {
   font-size: 18px;
 }
 
-.menu--items:hover {
-  font-size: 2rem;
-  font-weight: 600;
-  cursor: pointer;
-}
 
 
 
