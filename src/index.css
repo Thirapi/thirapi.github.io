@@ -1,7 +1,7 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #003739;
+  color: #030303de;
+  background-color: #ffffffde;
 }
 
 body {
@@ -10,5 +10,9 @@ body {
   display: flex;
   place-items: center;
   height: 100vh;
+  background: url('/assets/bg.svg');
+  background-repeat: no-repeat;
+  background-size: 160%;
+
 }
 
