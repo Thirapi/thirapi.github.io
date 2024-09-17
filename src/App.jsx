@@ -24,18 +24,22 @@ function App() {
         <Menu 
         icon={<BsPersonVcard className="icon" />}
         title="about"
+        toggle={commingSoon}
         />
         <Menu
         icon={<BsArchive className="icon" />}
         title="archive"
+        toggle={commingSoon}
         />
         <Menu
         icon={<BsTelephoneForward className="icon" />}
         title="contact"
+        toggle={commingSoon}
         />
         <Menu
         icon={<GiPistolGun className="icon" />}
         title="gun store"
+        toggle={commingSoon}
         />
       </div>
       </main>
