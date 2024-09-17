@@ -1,6 +1,8 @@
-import { BsPersonVcard, BsArchive, BsTelephoneForward } from "react-icons/bs";
+import { BsPersonVcard, BsArchive, BsTelephoneForward, BsSpotify } from "react-icons/bs";
 import { GiPistolGun } from "react-icons/gi";
 import Menu from './components/Menu'
+import { SpotifyProvider } from './components/SpotifyProvider';
+import NowPlaying from './components/NowPlaying';
 import './App.css'
 
 function App() {
@@ -42,6 +44,10 @@ function App() {
         toggle={commingSoon}
         />
       </div>
+      <hr/>
+      <SpotifyProvider>
+          <NowPlaying icon={<BsSpotify />}/>
+     </SpotifyProvider>
       </main>
     </>
   )

@@ -2,6 +2,7 @@
   max-width: 1280px;
   margin: auto;
   text-align: center;
+  padding: 0 15px; /* Added padding for smaller screens */
 }
 
 main {
@@ -10,19 +11,21 @@ main {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0px 16px 30px 0px rgba(0,0,0,0.76);
--webkit-box-shadow: 0px 16px 30px 0px rgba(0,0,0,0.76);
--moz-box-shadow: 0px 16px 30px 0px rgba(0,0,0,0.76);
+  -webkit-box-shadow: 0px 16px 30px 0px rgba(0,0,0,0.76);
+  -moz-box-shadow: 0px 16px 30px 0px rgba(0,0,0,0.76);
 }
 
 main:hover {
   box-shadow: 0px 12px 25px 0px rgba(0,0,0,0.76);
--webkit-box-shadow: 0px 12px 25px 0px rgba(0,0,0,0.76);
--moz-box-shadow: 0px 12px 25px 0px rgba(0,0,0,0.76);
+  -webkit-box-shadow: 0px 12px 25px 0px rgba(0,0,0,0.76);
+  -moz-box-shadow: 0px 12px 25px 0px rgba(0,0,0,0.76);
 }
 
 .main--header {
-display: flex;
-justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
 
 .main--header>img {
@@ -37,6 +40,8 @@ justify-content: space-around;
 
 .main--body {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .main--body--items {
@@ -48,23 +53,160 @@ justify-content: space-around;
   padding: 10px;
   border: 1px solid #c0bebe;
   border-radius: 8px;
+  max-width: 300px; /* Prevent items from being too wide */
 }
 
 .main--body--items:hover {
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
--webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
--moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
+  -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
 }
 
 .icon {
   font-size: 36px;
 }
 
-.main--body--items>span{
+.main--body--items>span {
   font-size: 18px;
 }
 
+.now-playing-container {
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
+  -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
+  background-color: #2e2f34;
+  border-radius: 10px;
+  padding: 0 30px 10px 30px;
+  width: 100%; /* Adjust width to 100% */
+  max-width: 340px; /* Max width ensures it doesn't stretch too much */
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto; /* Center align on smaller screens */
+}
 
+.now-playing h4 {
+  color: #a9a9a9;
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: flex;
+}
 
+.now-playing .spotify-logo {
+  font-size: 16px;
+  margin-left: 5px;
+  color: #1db954;
+}
 
+.track-info {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px; /* Give space before the progress bar */
+}
 
+.album-art {
+  height: 64px;
+  width: 64px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.track-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.track-details h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.track-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+/* Container for progress bar and time */
+.time-progress-container {
+  width: 100%; /* Ensure the progress bar takes full width */
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #40444b;
+  border-radius: 2px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background-color: #1db954; /* Spotify green */
+  border-radius: 2px;
+  transition: width 0.5s;
+}
+
+/* Time display */
+.time-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #b3b3b3;
+  margin-top: 5px;
+}
+
+.noTrack {
+  color: #1db954;
+  font-weight: 800;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .main--header>span {
+    font-size: 3rem;
+  }
+
+  .main--header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .now-playing-container {
+    width: 100%; /* Ensure full width on smaller screens */
+    max-width: 200px; /* Remove max-width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .main--header>span {
+    font-size: 2rem;
+  }
+
+  .track-details h3 {
+    font-size: 14px;
+  }
+
+  .track-details p {
+    font-size: 12px;
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+
+  .main--body--items {
+    margin: 5px;
+    padding: 8px;
+  }
+
+  .album-art {
+    height: 48px;
+    width: 48px;
+  }
+}
