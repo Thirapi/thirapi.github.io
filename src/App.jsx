@@ -25,24 +25,24 @@ function App() {
       <div className='main--body'>
         <Menu 
         icon={<BsPersonVcard className="icon" />}
-        title="about"
+        title="About"
         toggle={commingSoon}
         />
         <Menu
         icon={<BsArchive className="icon" />}
-        title="archive"
+        title="Archive"
         toggle={commingSoon}
         />
         <Menu
         icon={<BsTelephoneForward className="icon" />}
-        title="contact"
+        title="Contact"
         toggle={commingSoon}
         />
-        <Menu
+        {/* <Menu
         icon={<GiPistolGun className="icon" />}
         title="gun store"
         toggle={commingSoon}
-        />
+        /> */}
       </div>
       <hr/>
       <SpotifyProvider>
