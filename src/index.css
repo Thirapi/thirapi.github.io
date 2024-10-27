@@ -10,9 +10,5 @@ body {
   display: flex;
   place-items: center;
   height: 100vh;
-  background: url('/assets/bg.svg');
-  background-repeat: no-repeat;
-  background-size: 160%;
-
 }
 

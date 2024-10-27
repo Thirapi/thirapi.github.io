@@ -1,4 +1,7 @@
 import { BsPersonVcard, BsArchive, BsTelephoneForward, BsSpotify } from "react-icons/bs";
+import React, { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
+import Particles from 'react-tsparticles';
 import { GiPistolGun } from "react-icons/gi";
 import Menu from './components/Menu'
 import { SpotifyProvider } from './components/SpotifyProvider';
@@ -13,43 +16,60 @@ function App() {
   const commingSoon = () => {
     alert("under construction")
   }
+
+  const [position, setPosition] = useState({ x: 700, y: 100 });
+
+  const handleMouseMove = (e) => {
+    setPosition({ x: e.clientX, y: e.clientY });
+    console.log(position.x, position.y);
+  };
+
   return (
-    <>
-      <main>
-      <div className='main--header'><img 
-      src="https://avatars.githubusercontent.com/u/132630759" 
+    <div className="background" onMouseMove={handleMouseMove}>
+      <div className="blur-layer"></div>
+      <motion.div
+        className="circle box"
+        animate={{ x: `${position.x}px`, y: `${position.y}px` }}
+        transition={{
+          ease: "easeInOut",
+        }}
       />
-      <span>thirapi</span>
+      <motion.main
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 0.8 }}  
+      >
+      <div className='main--header'><motion.img 
+      src="https://avatars.githubusercontent.com/u/132630759" 
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.3, duration: 0.8 }}
+      />
+      <motion.span
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        thirapi
+      </motion.span>
       </div>
       <hr/>
       <div className='main--body'>
-        <Menu 
-        icon={<BsPersonVcard className="icon" />}
-        title="About"
-        toggle={commingSoon}
-        />
-        <Menu
-        icon={<BsArchive className="icon" />}
-        title="Archive"
-        toggle={commingSoon}
-        />
-        <Menu
-        icon={<BsTelephoneForward className="icon" />}
-        title="Contact"
-        toggle={commingSoon}
-        />
-        {/* <Menu
-        icon={<GiPistolGun className="icon" />}
-        title="gun store"
-        toggle={commingSoon}
-        /> */}
+        <motion.span
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="main--body--items"
+        >
+          A student passionate about technology and always eager to learn more.
+        </motion.span>
       </div>
       <hr/>
       <SpotifyProvider>
           <NowPlaying icon={<BsSpotify />}/>
      </SpotifyProvider>
-      </main>
-    </>
+      </motion.main>
+    </div>
   )
 }
 

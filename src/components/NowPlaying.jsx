@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { SpotifyContext } from './SpotifyProvider'; // Pastikan SpotifyContext diimpor
+import { motion } from 'framer-motion';
 
 const NowPlaying = (props) => {
   const { accessToken } = useContext(SpotifyContext);
@@ -51,7 +52,11 @@ const NowPlaying = (props) => {
   };
 
   return (
-    <div className="now-playing-container">
+    <motion.div 
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ delay: 0.3, duration: 0.8 }}
+    className="now-playing-container">
       {track ? (
         <div className="now-playing">
           <h4>Listening to Spotify <span className="spotify-logo">{props.icon}</span></h4>
@@ -80,7 +85,7 @@ const NowPlaying = (props) => {
                   <p>No track is currently playing.</p>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

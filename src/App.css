@@ -1,15 +1,77 @@
-#root {
-  max-width: 1280px;
-  margin: auto;
-  text-align: center;
-  padding: 0 15px; /* Added padding for smaller screens */
+
+.background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgb(2,0,36);
+  background: linear-gradient(348deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 28%, rgba(0,212,255,1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.blur-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.circle {
+  background: rgb(2,0,36);
+  background: linear-gradient(348deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 28%, rgba(0,212,255,1) 100%);
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  transform: translate(50%, 50%); 
+  z-index: 1; 
+}
+
+
+.box:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  transform: translate3d(0px, 20px, 0) scale(0.95);
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+      
 main {
   text-align: center;
   margin: auto;
+  z-index: 3;
   padding: 30px;
   border-radius: 8px;
+  background-color: #4b4b4b3b;
   box-shadow: 0px 16px 30px 0px rgba(0,0,0,0.76);
   -webkit-box-shadow: 0px 16px 30px 0px rgba(0,0,0,0.76);
   -moz-box-shadow: 0px 16px 30px 0px rgba(0,0,0,0.76);
@@ -36,6 +98,7 @@ main:hover {
 .main--header>span {
   font-size: 5rem;
   font-weight: bolder;
+  color: #ffffff;
 }
 
 .main--body {
@@ -52,6 +115,7 @@ main:hover {
   margin: auto;
   padding: 10px;
   background-color: transparent;
+  color: #ffffff;
   border: none;
   max-width: 300px; /* Prevent items from being too wide */
 }
@@ -76,17 +140,17 @@ main:hover {
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
   -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
   -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.76);
-  background-color: #2e2f34;
+  background-color: #2e2f3442;
   border-radius: 10px;
   padding: 0 30px 10px 30px;
-  width: auto; /* Adjust width to 100% */
-  max-width: 340px; /* Max width ensures it doesn't stretch too much */
+  width: auto;
+  max-width: 340px; 
   font-family: Arial, sans-serif;
   color: white;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto; /* Center align on smaller screens */
+  margin: 0 auto;
 }
 
 .now-playing h4 {
@@ -105,7 +169,7 @@ main:hover {
 .track-info {
   display: flex;
   flex-direction: row;
-  margin-bottom: 15px; /* Give space before the progress bar */
+  margin-bottom: 15px; 
 }
 
 .album-art {
