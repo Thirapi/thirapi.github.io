@@ -43,9 +43,7 @@ export default function Project({ className }: ProjectProps) {
   return (
     <div className={className} id="projects">
       <Link href="#projects">
-        <h1
-          className="text-xl sm:text-5xl font-bold text-center pb-8 after:content-['_↗']"
-        >
+        <h1 className="text-xl sm:text-5xl font-bold text-center pb-8 after:content-['_↗']">
           Projects
         </h1>
       </Link>

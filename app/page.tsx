@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <section className="flex flex-col my-28 space-y-6 max-w-5xl mx-auto px-4">
       <Hero />
-      <Project className="pt-20"/>
-      <About className="py-20"/>
+      <Project className="pt-20" />
+      <About className="py-20" />
       <Footer />
       <div
         aria-hidden="true"
