@@ -8,7 +8,7 @@ export default function Hero() {
     <div className="flex justify-between gap-8">
       <div className="flex flex-col gap-4 w-full max-w-2xl">
         <h1 className="text-xl font-bold leading-[30px] sm:text-3xl sm:leading-[45px]">
-          I'm{" "}
+          I&apos;m{" "}
           <a
             className="text-blue-600 after:content-['_↗']"
             href="https://twitter.com/faiqthirapi"
