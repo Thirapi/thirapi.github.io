@@ -56,7 +56,7 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl pt-12 2xl:pt-16 px-6 flex-grow">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3 gap-2">
+            {/* <footer className="w-full flex items-center justify-center py-3 gap-2">
               <Link
                 isExternal
                 aria-label="Twitter"
@@ -78,7 +78,7 @@ export default function RootLayout({
               >
                 <FaGithub className="text-default-500" />
               </Link>
-            </footer>
+            </footer> */}
           </div>
         </Providers>
       </body>
